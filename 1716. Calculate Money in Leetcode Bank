@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int totalMoney(int n) {
+        int rem=n%7,d=n/7,ans=0,j=7;
+        for(int i=0;i<d;i++){
+            ans+=(j*(j+1))/2;
+            ans-=(i*(i+1))/2;
+            j++;
+        }
+        d++;
+        while(rem--){
+          ans+=d;
+          d++;
+        }
+        return ans;
+    }
+};

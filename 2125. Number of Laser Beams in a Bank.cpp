@@ -1,11 +1,12 @@
 class Solution {
-    public int numberOfBeams(String[] bank) {
+public:
+    int numberOfBeams(vector<string>& bank) {
         int prevRowCount = 0;
-        int total=0;
+        int total = 0;
 
-        for(String row : bank) {
+        for (string& row : bank) {
             int curRowCount = calc(row);
-            if(curRowCount==0) 
+            if (curRowCount == 0)
                 continue;
 
             total += curRowCount * prevRowCount;
@@ -14,11 +15,12 @@ class Solution {
         return total;
     }
 
-    private int calc(String s) {
+private:
+    int calc(string& s) {
         int count = 0;
-        for(char c : s.toCharArray()) 
+        for (char c : s)
             count += c - '0';
 
         return count;
-    }    
-}
+    }
+};
